@@ -1,12 +1,14 @@
 import capitalize from "./capitalize.js";
 import reverseString from "./reverseString.js";
 
-test("Takes a string and returns it with first character capitalized", () => {
-  expect(capitalize("london")).toBe("London");
-});
-
-test("Takes a string and returns it with first character capitalized(2)", () => {
-  expect(capitalize("canada")).toBe("Canada");
+describe("String with first character capitalized function", () => {
+  test.each([
+    ["london", "London"],
+    ["Canada", "Canada"],
+    ["mAJESTY", "MAJESTY"],
+  ])('Capitalizes "%s" to "%s"', (input, expected) => {
+    expect(capitalize(input)).toBe(expected);
+  });
 });
 
 describe("String reversal function", () => {
