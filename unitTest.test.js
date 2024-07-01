@@ -1,6 +1,7 @@
 import capitalize from "./capitalize.js";
 import reverseString from "./reverseString.js";
 import calculator from "./calculator.js";
+import caesarCipher from "./caesarCipher.js";
 
 describe("String with first character capitalized function", () => {
   test.each([
@@ -76,4 +77,19 @@ describe("Calculator functions:", () => {
       expect(result).toBe(expected);
     });
   });
+});
+
+describe("Caesar cipher:", () => {
+  test.each([
+    ["arthur", 1, "bsuivs"],
+    ["Wisdom", 15, "Lxhsdb"],
+    ["xyz", 3, "abc"],
+    ["HeLLo", 3, "KhOOr"],
+    ["Hello, World!", 3, "Khoor, Zruog!"],
+  ])(
+    'Transforms string "%s" with shift factor %d to "%s"',
+    (string, shift, expected) => {
+      expect(caesarCipher(string, shift)).toBe(expected);
+    }
+  );
 });
