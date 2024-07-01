@@ -2,6 +2,7 @@ import capitalize from "./capitalize.js";
 import reverseString from "./reverseString.js";
 import calculator from "./calculator.js";
 import caesarCipher from "./caesarCipher.js";
+import analyzeArray from "./analyzeArray.js";
 
 describe("String with first character capitalized function", () => {
   test.each([
@@ -92,4 +93,14 @@ describe("Caesar cipher:", () => {
       expect(caesarCipher(string, shift)).toBe(expected);
     }
   );
+});
+
+describe("Analyze array: ", () => {
+  test.each([
+    [[1, 8, 3, 4, 2, 6], { average: 4, min: 1, max: 8, length: 6 }],
+    [[-2, 4, 10, 5, 10, 240], { average: 44.5, min: -2, max: 240, length: 6 }],
+    [[0, 10, 20, 30, 40], { average: 20, min: 0, max: 40, length: 5 }],
+  ])("Array of %o with object result of %o", (array, expected) => {
+    expect(analyzeArray(array)).toEqual(expected);
+  });
 });
