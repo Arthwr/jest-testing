@@ -1,8 +1,10 @@
-import capitalize from "./capitalize.js";
-import reverseString from "./reverseString.js";
-import calculator from "./calculator.js";
-import caesarCipher from "./caesarCipher.js";
-import analyzeArray from "./analyzeArray.js";
+import { describe, test, expect } from "@jest/globals";
+
+import capitalize from "../functions/capitalize.js";
+import reverseString from "../functions/reverseString.js";
+import calculator from "../functions/calculator.js";
+import caesarCipher from "../functions/caesarCipher.js";
+import analyzeArray from "../functions/analyzeArray.js";
 
 describe("String with first character capitalized function", () => {
   test.each([
